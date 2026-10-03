@@ -58,7 +58,7 @@ function BirthdayGreeting() {
         <p className={styles.signoff}>
           <em>Спасибо за встречу-свидание,</em>
           <br />
-          твой Semet, ой, Xcbe
+          твой Semet15, ой, Xcbe
         </p>
 
         <span className={styles.heart} aria-hidden="true">
