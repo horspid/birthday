@@ -1,38 +1,36 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import confetti from "canvas-confetti";
 
 const colors = ["#c78452", "#e9c18b", "#8f3a33", "#f2e1cc"];
 
 function ConfettiOnLoad() {
-  const hasLaunched = useRef(false);
-
   useEffect(() => {
-    if (hasLaunched.current) {
-      return;
-    }
-
-    hasLaunched.current = true;
-
-    const launchBurst = (angle: number, originX: number, delay: number) => {
-      window.setTimeout(() => {
-        void confetti({
-          angle,
-          colors,
-          gravity: 0.85,
-          origin: { x: originX, y: 0.62 },
-          particleCount: 38,
-          scalar: 0.9,
-          spread: 58,
-          startVelocity: 48,
-          ticks: 220,
-        });
-      }, delay);
+    const launch = (angle: number, originX: number) => {
+      void confetti({
+        angle,
+        colors,
+        gravity: 0.85,
+        origin: { x: originX, y: 0.62 },
+        particleCount: 38,
+        scalar: 0.9,
+        spread: 58,
+        startVelocity: 48,
+        ticks: 220,
+      });
     };
 
-    [0, 240, 480].forEach((delay) => {
-      launchBurst(45, 0.03, delay);
-      launchBurst(135, 0.97, delay);
-    });
+    const shootFromBothSides = () => {
+      launch(45, 0.03);
+      launch(135, 0.97);
+    };
+
+    const firstShot = window.setTimeout(shootFromBothSides, 50);
+    const interval = window.setInterval(shootFromBothSides, 2000);
+
+    return () => {
+      window.clearTimeout(firstShot);
+      window.clearInterval(interval);
+    };
   }, []);
 
   return null;
