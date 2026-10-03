@@ -1,0 +1,36 @@
+.stage {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 50% 25%, rgb(116 61 43 / 34%), transparent 47%),
+    radial-gradient(ellipse at 50% 100%, rgb(90 31 29 / 26%), transparent 44%),
+    #180808;
+}
+
+.stage::before,
+.stage::after {
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 100%;
+  content: "";
+  background: linear-gradient(transparent, rgb(190 112 64 / 20%), transparent);
+}
+
+.stage::before {
+  left: 5.5%;
+}
+
+.stage::after {
+  right: 5.5%;
+}
+
+@media (max-width: 640px) {
+  .stage::before,
+  .stage::after {
+    display: none;
+  }
+}

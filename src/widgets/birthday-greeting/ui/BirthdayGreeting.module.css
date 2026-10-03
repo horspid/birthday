@@ -1,0 +1,244 @@
+.page {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 616px);
+  min-height: 100svh;
+  margin-inline: auto;
+  color: #e8d5bd;
+  text-align: center;
+  animation: arrive 1.2s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+.letter {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 42px;
+  border-right: 1px solid rgb(187 126 84 / 15%);
+  border-left: 1px solid rgb(187 126 84 / 15%);
+  background:
+    radial-gradient(ellipse at 50% 1%, rgb(130 81 54 / 30%), transparent 34%),
+    linear-gradient(160deg, rgb(57 37 33 / 97%), rgb(39 25 25 / 98%));
+  box-shadow: 0 0 72px rgb(4 0 0 / 38%);
+}
+
+.header,
+.poem,
+.message,
+.wish,
+.signoff {
+  width: 100%;
+}
+
+.topOrnament,
+.bottomOrnament {
+  color: #aa6939;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.topOrnament {
+  height: 16px;
+  margin-bottom: 10px;
+}
+
+.bottomOrnament {
+  padding-bottom: 4px;
+}
+
+.header h1 {
+  color: #f0e2cc;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.name {
+  margin-top: 14px;
+  color: #c68658;
+  font-family: "Great Vibes", cursive;
+  font-size: 68px;
+  line-height: 1;
+}
+
+.english {
+  margin-top: 16px;
+  color: #c28c62;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0 10px;
+  color: #a96738;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.signoffRule {
+  display: none;
+}
+
+.rule span {
+  width: 42px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(169 103 56 / 70%));
+}
+
+.rule span:last-child {
+  transform: rotate(180deg);
+}
+
+.poem {
+  color: #bb906b;
+  font-size: 26px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.flowerRule {
+  display: none;
+}
+
+.message {
+  margin-top: 16px;
+  color: #d9c9b9;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.wish {
+  margin-top: 16px;
+  color: #bd8963;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.signoff {
+  margin-top: 32px;
+  color: #ddcdbb;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.signoff em {
+  color: #bd8963;
+  font-size: 20px;
+}
+
+.heart {
+  flex: 0 0 auto;
+  margin: 40px 0 44px;
+  color: #a94f43;
+  font-size: 72px;
+  line-height: 1;
+  filter: drop-shadow(0 0 14px rgb(169 79 67 / 35%));
+  transform-origin: center;
+  animation: heartPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%,
+  100% {
+    transform: scale(0.92);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .letter {
+    padding: 10px 8px;
+    border: 0;
+  }
+
+  .header h1 {
+    font-size: 39px;
+    white-space: nowrap;
+  }
+
+  .name {
+    font-size: 52px;
+  }
+
+  .name {
+    margin-top: 12px;
+  }
+
+  .rule {
+    display: none;
+  }
+
+  .poem {
+    font-size: 22px;
+    margin-top: 18px;
+    line-height: 1.35;
+  }
+
+  .flowerRule {
+    display: none;
+  }
+
+  .signoffRule {
+    display: none;
+  }
+
+  .message {
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 1.3;
+  }
+
+  .wish {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .signoff {
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .heart {
+    margin: 40px 0 48px;
+    font-size: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    animation: none;
+  }
+
+  .button {
+    transition: none;
+  }
+}
