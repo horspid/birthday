@@ -1,4 +1,5 @@
 import styles from "./BirthdayGreeting.module.css";
+import qrCode from "@assets/qr.png";
 
 function BirthdayGreeting() {
   return (
@@ -37,13 +38,13 @@ function BirthdayGreeting() {
 
         <p className={styles.message}>
           Пусть день начинается с эмоциональных рилсов, продолжается бизнесом и
-          заканчивается любимыми аукционами. Дальше будет ещё больше всего, что
-          любишь, и меньше того, что раздражает.
+          заканчивается любимыми аукционами. Дальше по праймовому контенту ждём
+          онлифанс в горячих боди!
         </p>
 
         <p className={styles.wish}>
-          Впереди ещё много новых городов, стран, вечеров и дней, которые
-          принесут тебе то, что пожелаешь. С днём рождения.
+          Надеюсь, что найдутся силы и возможности на посещение новых городов,
+          стран, которые помогут найти тебе счастье! С днём рождения!!
         </p>
 
         <div
@@ -58,12 +59,19 @@ function BirthdayGreeting() {
         <p className={styles.signoff}>
           <em>Спасибо за встречу-свидание,</em>
           <br />
-          твой Semet15, ой, Xcbe
+          твой Semet15, ой, XCbe
         </p>
+        <p></p>
 
-        <span className={styles.heart} aria-hidden="true">
-          ♥
-        </span>
+        <div className={styles.bottomOrnament} aria-hidden="true">
+          <span className={styles.heart} aria-hidden="true">
+            ♥
+          </span>
+          <img src={qrCode} alt="Birthday Greeting" className={styles.qrCode} />
+          <span className={styles.heart} aria-hidden="true">
+            ♥
+          </span>
+        </div>
       </article>
     </div>
   );
